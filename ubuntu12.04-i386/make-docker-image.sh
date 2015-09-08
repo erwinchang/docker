@@ -32,6 +32,7 @@ EOF
 ### install ubuntu-minimal
 cp /etc/resolv.conf $chroot_dir/etc/resolv.conf
 mount -o bind /proc $chroot_dir/proc
+chroot $chroot_dir apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5 3E5C1192
 chroot $chroot_dir apt-get update
 chroot $chroot_dir apt-get -y install ubuntu-minimal
 
