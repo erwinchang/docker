@@ -4,7 +4,7 @@
 ## ubuntu12.04-i386
 
  基本的 32bit ubuntu 12.04 image
- 同時同步到 dock-hub的ubuntu-12.04-32bit[1]
+ 同時同步到 dock-hub的[ubuntu-12.04-32bit][1]
 
  直接使用方式
 
@@ -15,7 +15,7 @@
 
 ## 開發需要docker image
 
- - build-env 參考ubuntu-12.04-32bit，安裝基本套件，產生ubuntu-12.04-32bit-build
+ - build-env 參考ubuntu-12.04-32bit，安裝基本套件，產生[ubuntu-12.04-32bit-build][2]
 
  - 直接使用方式
 
@@ -25,3 +25,4 @@
 
 
  [1]:https://hub.docker.com/r/erwinchang/ubuntu-12.04-32bit/
+ [2]:https://hub.docker.com/r/erwinchang/ubuntu-12.04-32bit-build/
