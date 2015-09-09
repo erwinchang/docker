@@ -1,12 +1,12 @@
-# Ubuntu 12.04 build
-產生基本的docker使用12.04 image，參考[toopher][1]方式建立
+# Ubuntu 14.04 build
+產生基本的docker使用14.04 image，參考[toopher][1]方式建立
 
 ## Docker
  
- - 下載github之後，執行下例指令即可使用目前的ubuntu12.04.tar.gz建立新的docker image
+ - 下載github之後，執行下例指令即可使用目前的ubuntu14.04.tar.gz建立新的docker image
 
 ```
-sudo docker build -t erwinchang/ubuntu-12.04-32bit .
+sudo docker build -t erwinchang/ubuntu-14.04-32bit .
 ```
 
 ## 產生rootfs tag方式
@@ -42,9 +42,9 @@ vagrant init
  - 查看 vagrant up帶起來訊息如下
  
 ```
-erwin@mini-pc:/opt/data/data/vagrant$ vagrant up
+erwin@mini-pc:/opt/data/data/github/docker/ubuntu14.04-i386$ vagrant up
 Bringing machine 'default' up with 'virtualbox' provider...
-==> default: Checking if box 'hashicorp/precise32' is up to date...
+==> default: Checking if box 'ubuntu/trusty32' is up to date...
 ==> default: Clearing any previously set forwarded ports...
 ==> default: Fixed port collision for 22 => 2222. Now on port 2200.
 ==> default: Clearing any previously set network interfaces...
@@ -59,28 +59,21 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: SSH auth method: private key
     default: Warning: Connection timeout. Retrying...
     default: Warning: Connection timeout. Retrying...
-    default: Warning: Connection timeout. Retrying...
-    default: 
+    default: Warning: Remote connection disconnect. Retrying...
+    default: Warning: Remote connection disconnect. Retrying...
+    default: Warning: Remote connection disconnect. Retrying...
+    default:
     default: Vagrant insecure key detected. Vagrant will automatically replace
     default: this with a newly generated keypair for better security.
-    default: 
+    default:
     default: Inserting generated public key within guest...
     default: Removing insecure key from the guest if it's present...
     default: Key inserted! Disconnecting and reconnecting using new SSH key...
 ==> default: Machine booted and ready!
 ==> default: Checking for guest additions in VM...
-    default: The guest additions on this VM do not match the installed version of
-    default: VirtualBox! In most cases this is fine, but in rare cases it can
-    default: prevent things such as shared folders from working properly. If you see
-    default: shared folder errors, please make sure the guest additions within the
-    default: virtual machine match the version of VirtualBox you have installed on
-    default: your host and reload your VM.
-    default: 
-    default: Guest Additions Version: 4.2.0
-    default: VirtualBox Version: 4.3
 ==> default: Mounting shared folders...
-    default: /vagrant => /opt/data/data/vagrant
-erwin@mini-pc:/opt/data/data/vagrant$ ls
+    default: /vagrant => /opt/data/data/github/docker/ubuntu14.04-i386
+
 ```
 
 [1]:https://github.com/toopher/toopher-docker/tree/master/ubuntu12.04-i386
