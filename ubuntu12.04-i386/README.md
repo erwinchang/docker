@@ -1,5 +1,3 @@
-Prolific USB 
-
 # Ubuntu 12.04 build
 產生基本的docker使用12.04 image，參考[toopher][1]方式建立
 
