@@ -3,7 +3,7 @@ HOST_PATH="$HOME"
 HOST_USER="$USER"
 CMD_NAME=$(basename $0)
 IMG_NAME=$(basename $IMAGE_NAME)
-RUN_NAME="$USER-$IMG_NAME"
+RUN_NAME="DOCKER-$USER-$IMG_NAME"
 DOCKER_PATH="/opt/$RUN_NAME"
 
 docker_ssh_login(){
@@ -52,9 +52,17 @@ echo "Usage: build.sh COMMAND [arg...]
 
 Commands:
     docker     	Build an image from a Dockerfile
+    			ex. sudo docker build -t "$IMAGE_NAME" .
+
     tty         Run $IMAGE as tty mode
+                ex. sudo docker run -t -i -v $HOST_PATH:$DOCKER_PATH --name $RUN_NAME $IMAGE_NAME /bin/bash
+
     ssh         Run $IMAGE as ssh mode
+                ex. sudo docker run -d -P --name $RUN_NAME -v $HOST_PATH:$DOCKER_PATH $IMAGE_NAME
+                    sudo docker port $RUN_NAME 22
+
     stop        Stop Docker ID($RUN_NAME)
+
     login       Used ssh auto login to docker image($RUN_NAME)
 "
 }
