@@ -1,0 +1,12 @@
+[user]
+    name = DockerUser
+    email = DockerUser@gmail.com
+[core]
+    autocrlf = false
+    fileMode = false
+    editor = vim
+[alias]
+    st = status
+    br = branch
+    co = checkout
+    ci = commit
