@@ -21,6 +21,9 @@ RUN linux32 apt-get -y install \
 ADD uci-lib.tgz /
 RUN linux32 ldconfig
 
+#fix LC_ALL
+RUN linux32 locale-gen en_US.UTF-8
+
 RUN linux32 apt-get autoclean
 RUN linux32 apt-get clean
 RUN linux32 apt-get autoremove
