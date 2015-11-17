@@ -23,6 +23,22 @@
  sudo docker pull erwinchang/ubuntu-12.04-32bit-build
  ```
 
+## Tools
+
+### nsenter
+
+referece: https://github.com/jpetazzo/nsenter
+
+```
+$ git log
+commit 71802a136a01704a1b8bd93d9a6608cd19359915
+Merge: 25c459291859 1534951a4c9f
+Author: Jerome Petazzoni <jerome.petazzoni@gmail.com>
+Date:   Mon Oct 19 18:28:44 2015 -0700
+
+    Merge branch 'BWITS-feature/#76'
+```    
+
 
  [1]:https://hub.docker.com/r/erwinchang/ubuntu-12.04-32bit/
  [2]:https://hub.docker.com/r/erwinchang/ubuntu-12.04-32bit-build/
