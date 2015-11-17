@@ -4,6 +4,7 @@
 
 * 使用nsenter 取代 ssh login方式
 * [nsenter說明][2]
+* 使用nsenter登入或操作真方便
 
 ```
 nsenter - run program with namespaces of other processes
@@ -12,6 +13,58 @@ nsenter - run program with namespaces of other processes
 
        -t, --target pid
 ```
+
+## 如何使用docker-enter
+
+* docker-enter說明
+
+```
+$ docker-enter
+Usage: docker-enter CONTAINER [COMMAND [ARG]...]
+
+Enters the Docker CONTAINER and executes the specified COMMAND.
+If COMMAND is not specified, runs an interactive shell in CONTAINER.
+e
+```
+
+### 執行指令
+	* 先取得container id
+	* 使用docker-enter id 指令 (代入id或另名皆可)
+
+```
+$ sudo docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED        STATUS              PORTS                  NAMES
+811ad84eaef3        erwinchang/build-hiv200   "linux32 /usr/sbin/s   6 minutes ago  Up 6 minutes xx DOCKER-erwin-build-hiv200
+
+$ sudo docker-enter 811ad84eaef3 ls -la /opt
+total 16
+drwxr-xr-x  4 root root 4096 Nov 17 17:17 .
+drwxr-xr-x 66 root root 4096 Nov 17 17:17 ..
+drwxr-xr-x 60 1000 1000 4096 Nov 17 16:58 DOCKER-erwin-build-hiv200
+drwxr-xr-x  8 1000 1000 4096 Nov 27  2014 arm-hisiv200-linux
+
+erwin@erwin-homepc: /media/raid5/data/game/github/docker on master
+$ sudo docker-enter DOCKER-erwin-build-hiv200 ls -la /opt
+total 16
+drwxr-xr-x  4 root root 4096 Nov 17 17:17 .
+drwxr-xr-x 66 root root 4096 Nov 17 17:17 ..
+drwxr-xr-x 60 1000 1000 4096 Nov 17 16:58 DOCKER-erwin-build-hiv200
+drwxr-xr-x  8 1000 1000 4096 Nov 27  2014 arm-hisiv200-linux
+```
+
+### 登入docker
+
+* docker-enter id/name：則直接登入
+
+```
+erwin@erwin-homepc: /media/raid5/data/game/github/docker on master
+$ sudo docker-enter DOCKER-erwin-build-hiv200
+root@811ad84eaef3:/# ls -l /opt/
+total 8
+drwxr-xr-x 60 1000 1000 4096 Nov 17 16:58 DOCKER-erwin-build-hiv200
+drwxr-xr-x  8 1000 1000 4096 Nov 27  2014 arm-hisiv200-linux
+```
+
 
 ## 安裝nsenter方式
 
