@@ -1,6 +1,6 @@
 [user]
     name = DockerUser
-    email = DockerUser@gmail.com
+    email = DockerUserMail
 [core]
     autocrlf = false
     fileMode = false

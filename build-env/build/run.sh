@@ -2,6 +2,6 @@
 
 IMAGE_NAME="erwinchang/ubuntu-12.04-32bit-build"
 
-. ../script/function.sh
+. ../script/function-docker-enter.sh
 
-function_main "$1"
+main "$1"

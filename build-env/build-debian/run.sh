@@ -1,6 +1,6 @@
 #/bin/sh
 
-IMAGE_NAME="erwinchang/openwrt-build"
+IMAGE_NAME="erwinchang/build-debian"
 
 . ../script/function-docker-enter.sh
 

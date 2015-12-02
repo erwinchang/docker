@@ -1,7 +1,7 @@
 #/bin/sh
 
-IMAGE_NAME="erwinchang/build-arm"
+IMAGE_NAME="erwinchang/build-arm-32bit"
 
-. ../script/function.sh
+. ../script/function-docker-enter.sh
 
-function_main "$1"
+main "$1"

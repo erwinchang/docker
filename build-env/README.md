@@ -1,10 +1,8 @@
 # Build Code基本image
 
-## build 使用方式
+## docker image 使用方式
 
-- 先使用 sudo docker pull [erwinchang/ubuntu-12.04-32bit-build][1]
-- 執行 ./run.sh tty，即可以使用終端機模式
-- 也可以使用 ./run.sh ssh，開始ssh方式
+- 執行 ./run.sh 來產生docker image及進入
 - 使用 ./run.sh stop，來停止docker image
 
 
@@ -29,7 +27,7 @@ make -j 3
 
 ## 其它說明
 
-- docker image會自動將使用者目錄mount到docker image /opt低下
+- docker image會自動將使用者目錄mount到docker image /opt/Docker-xxx
 
  
 [1]:https://hub.docker.com/

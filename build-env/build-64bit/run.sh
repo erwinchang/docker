@@ -2,6 +2,6 @@
 
 IMAGE_NAME="erwinchang/build-64bit"
 
-. ../script/function.sh
+. ../script/function-docker-enter.sh
 
-function_main "$1"
+main "$1"
