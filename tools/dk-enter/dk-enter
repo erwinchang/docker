@@ -1,0 +1,66 @@
+#!/bin/bash
+
+img_array=(null)
+run_img_array=(null)
+run_name_array=(null)
+
+get_build_image(){
+    local cnt=0
+
+    sudo docker images | grep build | awk '{print $1}' > ~/.dk-enter-build-img  
+
+    while read img; do
+        echo "$img"
+        eval img_array[$cnt]=$img
+        let "cnt=$cnt+1"
+    done < ~/.dk-enter-build-img
+}
+
+show_build_image(){
+    local length
+    local j
+    local line
+echo ""
+length=${#img_array[@]}
+echo "$length"
+for(( j=0; j<$length; j++ ))
+do
+    line=${img_array[$j]}
+    echo $j,$line
+done
+}
+
+get_run_image(){
+    local cnt=0
+
+    sudo docker ps -a | grep build | awk '{print $2 " "$NF}' > ~/.dk-enter-ps-img
+
+    while read img name; do
+        echo "$img,$name"
+        eval run_img_array[$cnt]=$img
+        eval run_name_array[$cnt]=$name
+        let "cnt=$cnt+1"
+    done < ~/.dk-enter-ps-img
+}
+
+show_run_image(){
+    local length
+    local j
+    local img
+    local id
+echo ""
+length=${#run_img_array[@]}
+echo "$length"
+for(( j=0; j<$length; j++ ))
+do
+    img=${run_img_array[$j]}
+    id=${run_name_array[$j]}
+    echo $j,$img,$id
+done
+}
+get_build_image
+show_build_image
+get_run_image
+show_run_image
+
+
