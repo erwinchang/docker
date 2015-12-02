@@ -8,7 +8,7 @@
 
 ## build 使用方式
 
-- 先使用 sudo docker pull [erwinchang/openwrt-build-env][1]
+- 先使用 sudo docker pull [erwinchang/openwrt-build][1]
 - 此為主要build openwrt使用，請使用run.sh來帶images
 - 參考[openwrt build][2]
 
