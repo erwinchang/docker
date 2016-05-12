@@ -15,10 +15,12 @@ RUN linux32 apt-get -y install \
 	liblua5.1-0.dev \
 	libncurses-dev \
 	uboot-mkimage \
+	automake \
 	cmake
 
 #make kernel need package : uboot-mkimage, libncurses-dev
 #make rootfs need package : lzma
+#libuv : automake
 
 # install uci
 ADD uci-lib.tgz /
