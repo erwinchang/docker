@@ -16,11 +16,18 @@ RUN linux32 apt-get -y install \
 	libncurses-dev \
 	uboot-mkimage \
 	automake \
-	cmake
+	cmake \
+    curl
 
 #make kernel need package : uboot-mkimage, libncurses-dev
 #make rootfs need package : lzma
 #libuv : automake
+#
+#node.js
+#curl
+RUN linux32 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN linux32 apt-get -y install nodejs
+RUN linux32 npm install -g gulp
 
 # install uci
 ADD uci-lib.tgz /
