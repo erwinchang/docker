@@ -11,8 +11,9 @@ RUN apt-get -y install \
 	git \
 	make \
 	libncurses5-dev \
-	zlib1g-dev gawk flex gettext wget unzip python 
-		
+	subversion \
+	zlib1g-dev gawk flex gettext wget unzip python
+
 RUN apt-get autoclean
 RUN apt-get clean
 RUN apt-get autoremove

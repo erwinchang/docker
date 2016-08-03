@@ -8,11 +8,15 @@ RUN apt-get update
 RUN apt-get -y install \
         build-essential \
         git \
-        make
+        make \
+        cmake
 
 RUN apt-get autoclean
 RUN apt-get clean
 RUN apt-get autoremove
+
+#bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN echo "cd \$DK_MOUNT_PATH" >> /root/.bashrc
 
