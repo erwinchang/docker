@@ -70,7 +70,7 @@ drwxr-xr-x  8 1000 1000 4096 Nov 27  2014 arm-hisiv200-linux
 
 ### 方式一：直接使用prebuild
 
-*若為ubuntu 14.04 64bin，直接將prebuild/nsenter,docker-enter,importenv
+* 若為ubuntu 14.04 64bin，直接將prebuild/nsenter,docker-enter,importenv,這3個檔案copy到/usr/local/bin
 
 ### 方式二：由docker產生
 
